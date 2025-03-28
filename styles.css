@@ -1,0 +1,201 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Para que los elementos se acomoden en pantallas pequeñas */
+}
+
+h2{ /* Para FORMULARIO DE COMENTARIOS */
+    color: #fff;
+}
+h3{
+    color: #fff;
+}
+
+#conociste{ /* ACORDEÓN CON MISMO ANCHO QUE LAS OTRAS CAJAS DE TEXTO */
+    max-width: 100%;
+    width: 98.5%;
+}
+
+label { /* Para los textos dentro del container */
+    display: block;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.container, .comments-container {
+    width: 45%;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 450px; /* Mantiene una altura mínima para evitar cambios bruscos */
+    transition: all 0.3s ease-in-out;
+    border: 2px solid gold;
+}
+
+/* Evita que el formulario se deforme */
+input[type="text"], input[type="email"], textarea, select {
+    width: 95%;
+    max-width: 120%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #666;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: goldenrod; /* Cambiar el color del botón al pasar el ratón por encima */
+}
+/* Estilos para el rating o valoración */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s;
+}
+
+/* Cambia el color de todas las estrellas anteriores cuando se pasa el cursor */
+.rating label:hover ~ label,
+.rating label:hover {
+    color: goldenrod; /* Asegura que se aplique */
+}
+
+/* Cambia el color cuando se selecciona una estrella */
+.rating input:checked ~ label {
+    color: #f39c12;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .container, .comments-container {
+        width: 90%;
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+
+    input, select, textarea {
+        font-size: 14px;
+    }
+
+    button, .btn-secondary {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .comments-container {
+        max-height: 300px; /* Ajuste para móviles */
+    }
+}
+
+/* Botón flotante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    }
+    
+    /* Efecto Hover */
+    .whatsapp-float:hover {
+    background-color: #1ebe57;
+    }
+    
+    /* Botón de WhatsApp */
+    .whatsapp-chat {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+    
+    .whatsapp-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 55px;
+        height: 55px;
+        background-color: #25D366;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .whatsapp-button:hover {
+        transform: scale(1.1);
+        background-color: #1EBE54;
+    }
+    
+    .whatsapp-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .whatsapp-tooltip {
+        display: none;
+        background-color: #fff;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 75px;
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        font-size: 14px;
+    }
+    
+    .whatsapp-chat:hover .whatsapp-tooltip {
+        display: block;
+    }
+    .contact {
+        font-family: 'Bebas Neue';
+    }
